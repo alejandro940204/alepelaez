@@ -3,6 +3,12 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            sass: {
+              files: ['**/*.scss'],
+              tasks: ['sass']
+            }
+          },
         sass: {
             options: {
               implementation: require('sass'),
@@ -10,16 +16,15 @@ module.exports = function(grunt) {
             },
             dist: {
               files: {
-                'sass.css': 'src/sass/style.scss'
+                'sass.css': 'src/sass/*.scss'
               }
             }
           }
     });
 
-    // Load the plugins that provide tasks.
-    grunt.loadNpmTasks('grunt-sass');
-
-    // Default task(s).
-    grunt.registerTask('default', ['sass']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+  
+    grunt.registerTask('default', ['watch']);
 
 };
