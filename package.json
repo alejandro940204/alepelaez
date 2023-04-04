@@ -19,6 +19,8 @@
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
     "dir-archiver": "^1.1.1",
+    "grunt": "^1.6.1",
+    "grunt-sass": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "node-sass": "^7.0.1",
@@ -39,7 +41,7 @@
   },
   "scripts": {
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass src/sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:css": "node-sass src/sass/ -o ./ && stylelint 'sass.css' --fix || true && stylelint 'sass.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
