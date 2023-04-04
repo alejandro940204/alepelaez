@@ -47,12 +47,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
 			<?php
-			echo $_SERVER['REQUEST_URI'];
+			
 		$menu_id = 'main';
 		$menu_items = wp_get_nav_menu_items($menu_id);
 
 		foreach($menu_items as $item) {
-			if ($item->url === $_SERVER['REQUEST_URI'])
+					$current_uri = 'http';
+			if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+			$current_uri .= 's';
+		}
+		$current_uri .= '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+			if ($item->url == $current_uri)
 			echo '<li class="nav-item">
 		<a class="nav-link active"  href="'.$item->url.'">'.$item->title.'</a></li>';	
 		else
