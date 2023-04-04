@@ -47,14 +47,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
 			<?php
-		$menu_name = 'primary-menu'; 
-		$menu_locations = get_nav_menu_locations();
 		$menu_id = 'main';
 		$menu_items = wp_get_nav_menu_items($menu_id);
 
 		foreach($menu_items as $item) {
-		echo '<li class="nav-item">
-		<a class="nav-link"  href="'.$item->url.'">'.$item->title.'</a></li>';				
+			$is_current = false;
+			if ($item->url === $_SERVER['REQUEST_URI']) {
+				$is_current = true;
+			}
+			echo '<li class="nav-item';
+			if ($is_current) {
+				echo ' active';
+			}
+			echo '"><a class="nav-link" href="'.$item->url.'">'.$item->title.'</a></li>';
 		}
 		?>    
         
