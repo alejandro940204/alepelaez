@@ -1,5 +1,5 @@
 <?php
-function my_custom_block_register() {
+
     
  if( function_exists('acf_add_options_page') ) {
 
@@ -23,5 +23,3 @@ acf_register_block_type(array(
 
 ));
 
-}
-add_action('acf/init', 'my_custom_block_register');
