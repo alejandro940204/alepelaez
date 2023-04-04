@@ -47,7 +47,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
 			<?php
-		$menu_name = 'main'; // replace with the name of your menu
+		$menu_name = 'primary-menu'; 
 		$menu_locations = get_nav_menu_locations();
 		$menu_id = $menu_locations[$menu_name];
 		$menu_items = wp_get_nav_menu_items($menu_id);
@@ -56,19 +56,10 @@
 		echo '<li class="nav-item">
 		<a class="nav-link"  href="'.$item->url.'">'.$item->title.'</a></li>';				
 		}
-		?>
-        
-        
+		?>    
         
       </ul>
-	  <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'main',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+	 
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
