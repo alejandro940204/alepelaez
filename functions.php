@@ -184,13 +184,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-acf_register_block_type(array(
-    'name'              => 'main-header',
-    'title'             => __('Main Header'),
-    'description'       => __(''),
-    'render_template'   => 'template-parts/blocks/main-header/index.php',
-    'icon'              => 'admin-comments',
-    'keywords'          => array('main', 'header', 'banner', 'top'),
-    'category' => 'widgets'
 
-));
