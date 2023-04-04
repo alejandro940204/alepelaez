@@ -9,7 +9,7 @@
 
 ( function( $ ) {
 	// Site title and description.
-	console.log($(".menu-toggle").html())
+	
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-title a' ).text( to );
