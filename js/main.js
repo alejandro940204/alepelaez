@@ -1,2 +1,6 @@
 
-console.log("hello world!");
+ ( function( $ ) {
+
+    console.log($(".menu-toggle").html())
+
+}( jQuery ) );
