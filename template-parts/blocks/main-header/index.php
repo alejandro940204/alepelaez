@@ -1,3 +1,3 @@
 <?php
+echo acf_get_field('logo','option')
 ?>
-<h1>Hello Word!</h1>
