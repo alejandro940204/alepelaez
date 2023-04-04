@@ -175,7 +175,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Register Blocks.
  */
-// require get_template_directory() . '/inc/register-blocks.php';
+require get_template_directory() . '/inc/register-blocks.php';
 
 /**
  * Load Jetpack compatibility file.
