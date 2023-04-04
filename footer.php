@@ -12,7 +12,7 @@
 ?>
 
 	
-<div class="container my-5">
+
 
 <footer class="text-center text-lg-start" style="background-color: #F8F9FA;">
   <div class="container d-flex justify-content-center py-5">
@@ -38,8 +38,7 @@
   <!-- Copyright -->
 </footer>
 
-</div>
-<!-- End of .container -->
+
 	
 </div><!-- #page -->
 
