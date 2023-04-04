@@ -51,15 +51,12 @@
 		$menu_items = wp_get_nav_menu_items($menu_id);
 
 		foreach($menu_items as $item) {
-			$is_current = false;
-			if ($item->url === $_SERVER['REQUEST_URI']) {
-				$is_current = true;
-			}
-			echo '<li class="nav-item';
-			if ($is_current) {
-				echo ' active';
-			}
-			echo '"><a class="nav-link" href="'.$item->url.'">'.$item->title.'</a></li>';
+			if ($item->url === $_SERVER['REQUEST_URI'])
+			echo '<li class="nav-item">
+		<a class="nav-link active"  href="'.$item->url.'">'.$item->title.'</a></li>';	
+		else
+		echo '<li class="nav-item">
+		<a class="nav-link"  href="'.$item->url.'">'.$item->title.'</a></li>';				
 		}
 		?>    
         
