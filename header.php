@@ -57,6 +57,8 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
 	
-	<?php
-	alepelaez_custom_header_setup()
+		<?php
+	alepelaez_custom_header_setup();
+	?>
