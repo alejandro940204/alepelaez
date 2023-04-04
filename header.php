@@ -46,13 +46,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-		
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+			<?php
+		$menu_name = 'main'; // replace with the name of your menu
+		$menu_locations = get_nav_menu_locations();
+		$menu_id = $menu_locations[$menu_name];
+		$menu_items = wp_get_nav_menu_items($menu_id);
+
+		foreach($menu_items as $item) {
+		echo '<li class="nav-item">
+		<a class="nav-link"  href="'.$item->url.'">'.$item->title.'</a></li>';				
+		}
+		?>
+        
         
         
       </ul>
