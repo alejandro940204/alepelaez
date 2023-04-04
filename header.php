@@ -49,7 +49,7 @@
 			<?php
 		$menu_name = 'primary-menu'; 
 		$menu_locations = get_nav_menu_locations();
-		$menu_id = $menu_locations[$menu_name];
+		$menu_id = 'main';
 		$menu_items = wp_get_nav_menu_items($menu_id);
 
 		foreach($menu_items as $item) {
