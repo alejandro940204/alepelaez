@@ -47,6 +47,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
 			<?php
+			echo $_SERVER['REQUEST_URI'];
 		$menu_id = 'main';
 		$menu_items = wp_get_nav_menu_items($menu_id);
 
