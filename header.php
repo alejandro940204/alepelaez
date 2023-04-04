@@ -47,7 +47,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
 	  <?php
-    if ( has_nav_menu( 'main' ) ) {
+    if ( has_nav_menu( 'primary-menu' ) ) {
       wp_nav_menu( array(
         'theme_location' => 'primary-menu',
         'container' => false,
