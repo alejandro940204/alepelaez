@@ -3,7 +3,7 @@
 <div class="row">
 <?php if ( have_rows( 'services' ) ) : ?>
     <?php while ( have_rows( 'services' ) ) : the_row(); ?>
-  <div class="col-sm-6">
+  <div class="col-sm-4">
   <div class="card" style="width: 18rem;">
   <img src="<?php the_sub_field( 'image' ); ?>" class="card-img-top" alt="...">
   <div class="card-body">
