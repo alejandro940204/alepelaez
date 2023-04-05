@@ -1,5 +1,6 @@
 <?php
 ?>
+<div class="container text-center">
 <div class="row">
 <?php if ( have_rows( 'services' ) ) : ?>
     <?php while ( have_rows( 'services' ) ) : the_row(); ?>
@@ -15,4 +16,5 @@
   </div>
   <?php endwhile; ?>
   <?php endif; ?>
+</div>
 </div>
