@@ -23,3 +23,14 @@ acf_register_block_type(array(
 
 ));
 
+acf_register_block_type(array(
+    'name'              => 'services',
+    'title'             => __('Services'),
+    'description'       => __(''),
+    'render_template'   => 'template-parts/blocks/services/index.php',
+    'icon'              => 'admin-comments',
+    'keywords'          => array('services', 'card', 'repeter'),
+    'category' => 'widgets'
+
+));
+
