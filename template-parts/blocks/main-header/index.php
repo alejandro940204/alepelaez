@@ -4,6 +4,7 @@
     style="
       background-image: url(<?php echo get_field('logo','option') ?>);
       height: 400px;
+      background-size: cover;
     "
   >
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
