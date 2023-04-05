@@ -9,7 +9,7 @@
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Alejandro Pelaez</h1>
+          <h1 class="mb-3"><?php echo get_field('title') ?></h1>
           <h4 class="mb-3">web developer</h4>
           <a class="btn btn-outline-light btn-lg" href="#!" role="button"
           >Contact</a
