@@ -2,7 +2,7 @@
 <div
     class="p-5 text-center bg-image"
     style="
-      background-image: <?php echo get_field('logo','option') ?>;
+      background-image: url(<?php echo get_field('logo','option') ?>);
       height: 400px;
     "
   >
