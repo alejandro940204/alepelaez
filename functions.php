@@ -14,3 +14,8 @@ function custom_team_template($template) {
 
     return $template;
 }
+
+function enqueue_bootstrap_styles() {
+    wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', array(), '4.5.0', 'all' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_bootstrap_styles' );
