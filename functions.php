@@ -112,3 +112,8 @@ function sincronizar_td_team()
 
 add_action('save_post_td_team', 'sincronizar_td_team');
 add_action('delete_post_td_team', 'sincronizar_td_team');
+
+add_filter( 'rest_api_allowed_http_methods', function( $allowed_methods ) {
+    $allowed_methods[] = 'PUT';
+    return $allowed_methods;
+} );
