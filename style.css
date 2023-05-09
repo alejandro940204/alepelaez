@@ -47,3 +47,11 @@ Template: dt-the7
     top:0;
     left: 0;
 }
+.team-single img{
+    margin-top: 300px;
+}
+@media screen and (max-width: 782px){
+    .team-hero{
+        margin-top: 50px;
+    }
+}
