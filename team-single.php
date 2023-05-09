@@ -36,7 +36,7 @@ get_header(); ?>
                     </div>
                     <div class="container col-md-8 team-single text-center">
                         <img width="93" height="94" src="<?php echo $url ?>" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
-                        <h3 style="text-align: center;margin: 20px;"><?php get_post_type() ?></h3>
+                        <h3 style="text-align: center;margin: 20px;"><?php echo get_the_title() ?></h3>
                         <h5 style="text-align: center;margin: 20px;"><?php the_field('position', $team_id) ?></h5>
                         <div class="team-bio text-left">
                             <?php the_field('bio', $team_id) ?>
