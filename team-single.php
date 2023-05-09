@@ -38,36 +38,6 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <style>
-                        .team-single {
-                            padding-top: 70px;
-                        }
-
-                        .team-bio {
-                            border-top: 1px solid black;
-                            padding-top: 50px;
-                        }
-
-                        .team-hero {
-                            background-color: #E9E9E9;
-
-                        }
-
-                        .team-colors {
-                            margin: 0 auto;
-                        }
-
-                        .team-colors {
-                            height: 12px;
-                            background: linear-gradient(to right,
-                                    #84DADE 0%,
-                                    #006F78 20%,
-                                    #00A0DF 40%,
-                                    #EBA900 60%,
-                                    #E43D31 80%);
-
-                        }
-                    </style>
                 </div><!-- .entry-content -->
             </article><!-- #post-## -->
 
