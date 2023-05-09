@@ -41,3 +41,9 @@ Template: dt-the7
             #E43D31 100%);
 
 }
+.hero-width{
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: 0;
+}
