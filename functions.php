@@ -116,7 +116,7 @@ add_action( 'acf/include_fields', function() {
 
     // Decodificar la respuesta de la API REST de WordPress
     $td_team_destino = json_decode( wp_remote_retrieve_body( $td_team_destino ) );
-
+  }
     // Obtener los campos personalizados de ACF del post type "td_team" del sitio de WordPress de origen
     $td_team_acf_origen_single =null;
     foreach ( $td_team_acf_origen as $td_team_acf ) {
@@ -129,7 +129,7 @@ add_action( 'acf/include_fields', function() {
       // Error al obtener los campos personalizados de ACF del post type "td_team" del sitio de WordPress de origen
       continue;
     }
-    
+
     // Crear o actualizar los campos personalizados de ACF del post type "td_team" en el sitio de WordPress de destino
     foreach ( $td_team_acf_origen_single as $campo => $valor ) {
     
