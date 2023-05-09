@@ -23,12 +23,12 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="row team-colors">
-                        <div class="col-xs" style="background-color:white ;"></div>
-                        <div class="col-xs" style="background-color:#84DADE ;"></div>
-                        <div class="col-xs" style="background-color:#006F78 ;"></div>
-                        <div class="col-xs" style="background-color:#00A0DF ;"></div>
-                        <div class="col-xs" style="background-color:#EBA900 ;"></div>
-                        <div class="col-xs" style="background-color:#E43D31 ;"></div>
+                        <div class="col-xs-2" style="background-color:white ;"></div>
+                        <div class="col-xs-2" style="background-color:#84DADE ;"></div>
+                        <div class="col-xs-2" style="background-color:#006F78 ;"></div>
+                        <div class="col-xs-2" style="background-color:#00A0DF ;"></div>
+                        <div class="col-xs-2" style="background-color:#EBA900 ;"></div>
+                        <div class="col-xs-2" style="background-color:#E43D31 ;"></div>
                     </div>
                     <div class="container col-md-8 team-single text-center">
                         <img width="93" height="94" src="https://alejandro.the-webones.com/wp-content/uploads/2017/05/Carlos-Duart.png" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
@@ -50,7 +50,7 @@ get_header(); ?>
                         .team-hero{
                            background-color: #E9E9E9;
                         }
-                        .team-colors .col-xs{
+                        .team-colors .col-xs-2{
                             height: 12px;
                            
                         }
