@@ -75,45 +75,45 @@ add_action('acf/include_fields', function () {
 });
 
 //--------------- UPDATE Team Memebers --------------------------------
-function sincronizar_td_team()
-{
-    $origen_url = 'alejandro.the-webones.com';
-    $destino_url = 'jorges169.sg-host.com';
+// function sincronizar_td_team()
+// {
+//     $origen_url = 'alejandro.the-webones.com';
+//     $destino_url = 'jorges169.sg-host.com';
 
-    $origen_auth = array('Authorization' => 'Basic YWxlcGVsYWV6OTRAZ21haWwuY29tOmhZbFNQZFNTNGE4MkFKJGxqTDgjclFyRA==');
-    $destino_auth = array('Authorization' => 'Basic YWxlcGVsYWV6OTRAZ21haWwuY29tOmhZbFNQZFNTNGE4MkFKJGxqTDgjclFyRA==');
+//     $origen_auth = array('Authorization' => 'Basic YWxlcGVsYWV6OTRAZ21haWwuY29tOmhZbFNQZFNTNGE4MkFKJGxqTDgjclFyRA==');
+//     $destino_auth = array('Authorization' => 'Basic YWxlcGVsYWV6OTRAZ21haWwuY29tOmhZbFNQZFNTNGE4MkFKJGxqTDgjclFyRA==');
     
-    $td_team_origen = wp_remote_get($origen_url . '/wp-json/wp/v2/td_team?_embed', array('headers' => $origen_auth));
+//     $td_team_origen = wp_remote_get($origen_url . '/wp-json/wp/v2/td_team?_embed', array('headers' => $origen_auth));
     
 
-    if (is_wp_error($td_team_origen) || is_wp_error($td_team_acf_origen)) {
-    return;
-    }
+//     if (is_wp_error($td_team_origen) || is_wp_error($td_team_acf_origen)) {
+//     return;
+//     }
 
-    $td_team_origen = json_decode(wp_remote_retrieve_body($td_team_origen));
-    $td_team_acf_origen = json_decode(wp_remote_retrieve_body($td_team_acf_origen));
+//     $td_team_origen = json_decode(wp_remote_retrieve_body($td_team_origen));
+//     $td_team_acf_origen = json_decode(wp_remote_retrieve_body($td_team_acf_origen));
 
-    foreach ($td_team_origen as $td_team) {
+//     foreach ($td_team_origen as $td_team) {
 
-        $td_team_destino = wp_remote_post($destino_url . '/wp-json/wp/v2/td_team', array(
-            'headers' => $destino_auth,
-            'body' => json_encode($td_team),
-        ));
+//         $td_team_destino = wp_remote_post($destino_url . '/wp-json/wp/v2/td_team', array(
+//             'headers' => $destino_auth,
+//             'body' => json_encode($td_team),
+//         ));
 
-        if (is_wp_error($td_team_destino)) {
-            continue;
-        }
+//         if (is_wp_error($td_team_destino)) {
+//             continue;
+//         }
     
-    // Decodificar la respuesta de la API REST de WordPress
-    $td_team_destino = json_decode(wp_remote_retrieve_body($td_team_destino));
+//     // Decodificar la respuesta de la API REST de WordPress
+//     $td_team_destino = json_decode(wp_remote_retrieve_body($td_team_destino));
     
-}
-}
+// }
+// }
 
-add_action('save_post_td_team', 'sincronizar_td_team');
-add_action('delete_post_td_team', 'sincronizar_td_team');
+// add_action('save_post_td_team', 'sincronizar_td_team');
+// add_action('delete_post_td_team', 'sincronizar_td_team');
 
-add_filter( 'rest_api_allowed_http_methods', function( $allowed_methods ) {
-    $allowed_methods[] = 'PUT';
-    return $allowed_methods;
-} );
+// add_filter( 'rest_api_allowed_http_methods', function( $allowed_methods ) {
+//     $allowed_methods[] = 'PUT';
+//     return $allowed_methods;
+// } );
