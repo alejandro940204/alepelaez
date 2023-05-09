@@ -33,8 +33,8 @@ get_header(); ?>
                         <div class="col col-1" style="background-color:#E43D31 ;"></div>
                     </div>
                     <div class="container col-md-8 team-single text-center">
-                        <img width="93" height="94" src="<?php the_field('image',$team_id) ?>" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
-                        <h3 style="text-align: center;margin: 20px;"><?php the_field('team_name',$team_id) ?></h3>
+                        <img width="93" height="94" src="<?php get_the_post_thumbnail( $team_id, 'large' ); ?>" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
+                        <h3 style="text-align: center;margin: 20px;"><?php get_the_title() ?></h3>
                         <h5 style="text-align: center;margin: 20px;"><?php the_field('position',$team_id) ?></h5>
                         <div class="team-bio text-left">
                         <?php the_field('bio',$team_id) ?>
