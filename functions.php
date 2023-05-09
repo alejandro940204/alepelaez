@@ -147,6 +147,7 @@ add_action( 'acf/include_fields', function() {
         continue;
       }
     }
+}
 
     add_action( 'save_post_td_team', 'sincronizar_td_team' );
     add_action( 'delete_post_td_team', 'sincronizar_td_team' );
