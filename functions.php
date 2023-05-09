@@ -108,12 +108,12 @@ add_action( 'acf/include_fields', function() {
       'headers' => $destino_auth,
       'body' => json_encode( $td_team ),
     ) );
-    }
+    
     if ( is_wp_error( $td_team_destino ) ) {
       // Error al crear o actualizar el post type "td_team" en el sitio de WordPress de destino
       continue;
     }
-
+  }
     // Decodificar la respuesta de la API REST de WordPress
     $td_team_destino = json_decode( wp_remote_retrieve_body( $td_team_destino ) );
   
@@ -124,12 +124,12 @@ add_action( 'acf/include_fields', function() {
         $td_team_acf_origen_single = $td_team_acf->fields;
         break;
       }
-    }
+    
     if ( ! $td_team_acf_origen_single ) {
       // Error al obtener los campos personalizados de ACF del post type "td_team" del sitio de WordPress de origen
       continue;
     }
-
+    }
     // Crear o actualizar los campos personalizados de ACF del post type "td_team" en el sitio de WordPress de destino
     foreach ( $td_team_acf_origen_single as $campo => $valor ) {
     
