@@ -15,6 +15,7 @@ get_header(); ?>
 
                 <div class="entry-content">
                     <?php the_content(); ?>
+                    <div class="header-space sticky-space-off" style="height: 126px;"></div>
               <div class="container team-single" style="text-align: center;>
               <img width="93" height="94" src="https://alejandro.the-webones.com/wp-content/uploads/2017/05/Carlos-Duart.png" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
               <h3 style="text-align: center;">CARLOS DUART</h3> 
