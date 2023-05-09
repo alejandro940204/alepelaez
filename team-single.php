@@ -55,6 +55,15 @@ get_header(); ?>
 
                         .team-hero {
                             background-color: #E9E9E9;
+                            background: -webkit-linear-gradient(top, rgb(235, 235, 235) 0%, rgb(230, 230, 230) 99%);
+                            min-width: 1654px;
+                            left: -212px;
+                            width: 1654px;
+                            position: absolute;
+                            height: 100%;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
                         }
 
                         .team-colors {
