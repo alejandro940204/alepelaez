@@ -26,16 +26,11 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="row team-colors">
-                        <div class="col col-1" style="background-color:white ;"></div>
-                        <div class="col col-2" style="background-color:#84DADE ;"></div>
-                        <div class="col col-3" style="background-color:#006F78 ;"></div>
-                        <div class="col col-3" style="background-color:#00A0DF ;"></div>
-                        <div class="col col-2" style="background-color:#EBA900 ;"></div>
-                        <div class="col col-1" style="background-color:#E43D31 ;"></div>
+                    <div class="team-colors">
+                       
                     </div>
                     <div class="container col-md-8 team-single text-center">
-                        <img width="93" height="94" src="<?php echo $url ?>" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
+                        <img width="93" height="94" src="<?php echo $url ?>" class="attachment-full" alt="" decoding="async" loading="lazy" >
                         <h3 style="text-align: center;margin: 20px;"><?php echo get_the_title() ?></h3>
                         <h5 style="text-align: center;margin: 20px;"><?php the_field('position', $team_id) ?></h5>
                         <div class="team-bio text-left">
@@ -55,15 +50,21 @@ get_header(); ?>
 
                         .team-hero {
                             background-color: #E9E9E9;
-                           
+
                         }
 
                         .team-colors {
                             margin: 0 auto;
                         }
 
-                        .team-colors .col {
+                        .team-colors {
                             height: 12px;
+                            background: linear-gradient(to right,
+                                    #84DADE 0%,
+                                    #006F78 20%,
+                                    #00A0DF 40%,
+                                    #EBA900 60%,
+                                    #E43D31 80%);
 
                         }
                     </style>
