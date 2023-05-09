@@ -43,6 +43,9 @@ get_header(); ?>
                     </div>
 
                     <style>
+                        .team-single{
+                            padding-top: 70px;
+                        }
                         .team-bio {
                             border-top: 1px solid black;
                             padding-top: 50px;
