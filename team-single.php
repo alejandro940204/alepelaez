@@ -34,7 +34,7 @@ get_header(); ?>
                     </div>
                     <div class="container col-md-8 team-single text-center">
                         <img width="93" height="94" src="<?php the_field('image',$team_id) ?>" class="vc_single_image-img attachment-full" alt="" decoding="async" loading="lazy" title="Carlos-Duart" data-dt-location="https://alejandro.the-webones.com/carlos-duart-2/">
-                        <h3 style="text-align: center;margin: 20px;"><?php the_field('name',$team_id) ?></h3>
+                        <h3 style="text-align: center;margin: 20px;"><?php the_field('team_name',$team_id) ?></h3>
                         <h5 style="text-align: center;margin: 20px;"><?php the_field('position',$team_id) ?></h5>
                         <div class="team-bio text-left">
                         <?php the_field('bio',$team_id) ?>
