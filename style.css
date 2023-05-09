@@ -47,9 +47,13 @@ Template: dt-the7
     top:0;
     left: 0;
     z-index: 2;
-    min-width: 1600px;
-    left: -141px;
+
    
+}
+@media (min-width: 782px) and (max-width: 992px){
+    .hero-width{
+        top: 100px !important;
+    }
 }
 .team-single img{
     margin-top: 200px;
