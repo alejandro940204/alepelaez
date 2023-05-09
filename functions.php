@@ -73,41 +73,80 @@ add_action( 'acf/include_fields', function() {
 } );
 
 //--------------- UPDATE Team Memebers --------------------------------
-add_action( 'rest_api_init', function () {
-    
-    add_filter( 'rest_authentication_errors', function( $result ) {
-        if ( ! empty( $result ) ) {
-            return $result;
-        }
-        if ( ! is_user_logged_in() ) {
-            return new WP_Error( 'rest_not_logged_in', 'No estás conectado.', array( 'status' => 401 ) );
-        }
-        return $result;
-    });
-   
-  });
+ function sincronizar_td_team() {
 
-  function sincronizar_entradas($entrada_id, $sitio1_url, $sitio2_url) {
-    
-    $response = wp_remote_get($sitio1_url . '/wp-json/wp/v2/dt_team/' . $entrada_id);
-    $entrada1 = json_decode(wp_remote_retrieve_body($response), true);
-    
-    $response = wp_remote_post($sitio2_url . '/wp-json/wp/v2/dt_team/' . $entrada_id, array(
-        'method' => 'POST',
-        'headers' => array('Content-Type' => 'application/json'),
-        'body' => json_encode($entrada1)
-    ));
-}
+  // URL del sitio de WordPress que contiene los post type "td_team" y los campos personalizados de ACF
+  $origen_url = 'https://alejandro.the-webones.com';
 
-add_action('save_post', function ($post_id) {
-    // Verifica si la entrada es del CPT "team"
-    if (get_post_type($post_id) == 'dt_team') {
-        // Sincroniza la entrada en el primer sitio
-        sincronizar_entradas($post_id, 'https://alejandro.the-webones.com/', 'https://jorges169.sg-host.com/');
+  // URL del sitio de WordPress que recibirá los post type "td_team" y los campos personalizados de ACF sincronizados
+  $destino_url = 'https://jorges169.sg-host.com';
+
+  // Autenticación del sitio de WordPress de origen (reemplazar 'usuario' y 'contraseña' por tus credenciales)
+  $origen_auth = array( 'Authorization' => 'Basic ' . base64_encode( 'alepelaez94@gmail.com:hYlSPdSS4a82AJ$ljL8#rQrD' ) );
+
+  // Autenticación del sitio de WordPress de destino (reemplazar 'usuario' y 'contraseña' por tus credenciales)
+  $destino_auth = array( 'Authorization' => 'Basic ' . base64_encode( 'alepelaez94@gmail.com:hYlSPdSS4a82AJ$ljL8#rQrD' ) );
+
+  // Obtener los post type "td_team" y los campos personalizados de ACF del sitio de WordPress de origen
+  $td_team_origen = wp_remote_get( $origen_url . '/wp-json/wp/v2/td_team?_embed', array( 'headers' => $origen_auth ) );
+  $td_team_acf_origen = wp_remote_get( $origen_url . '/wp-json/acf/v3/td_team', array( 'headers' => $origen_auth ) );
+
+  if ( is_wp_error( $td_team_origen ) || is_wp_error( $td_team_acf_origen ) ) {
+    // Error al obtener los post type "td_team" o los campos personalizados de ACF del sitio de WordPress de origen
+    return;
+  }
+
+  // Decodificar la respuesta de la API REST de WordPress
+  $td_team_origen = json_decode( wp_remote_retrieve_body( $td_team_origen ) );
+  $td_team_acf_origen = json_decode( wp_remote_retrieve_body( $td_team_acf_origen ) );
+
+  // Crear o actualizar los post type "td_team" y los campos personalizados de ACF en el sitio de WordPress de destino
+  foreach ( $td_team_origen as $td_team ) {
+
+    // Crear o actualizar el post type "td_team" en el sitio de WordPress de destino
+    $td_team_destino = wp_remote_post( $destino_url . '/wp-json/wp/v2/td_team', array(
+      'headers' => $destino_auth,
+      'body' => json_encode( $td_team ),
+    ) );
+
+    if ( is_wp_error( $td_team_destino ) ) {
+      // Error al crear o actualizar el post type "td_team" en el sitio de WordPress de destino
+      continue;
     }
-}, 10, 1);
 
+    // Decodificar la respuesta de la API REST de WordPress
+    $td_team_destino = json_decode( wp_remote_retrieve_body( $td_team_destino ) );
 
+    // Obtener los campos personalizados de ACF del post type "td_team" del sitio de WordPress de origen
+    $td_team_acf_origen_single =null;
+    foreach ( $td_team_acf_origen as $td_team_acf ) {
+      if ( $td_team_acf->key == 'group_6319532131c57' ) {
+        $td_team_acf_origen_single = $td_team_acf->fields;
+        break;
+      }
+    }
+    if ( ! $td_team_acf_origen_single ) {
+      // Error al obtener los campos personalizados de ACF del post type "td_team" del sitio de WordPress de origen
+      continue;
+    }
+    
+    // Crear o actualizar los campos personalizados de ACF del post type "td_team" en el sitio de WordPress de destino
+    foreach ( $td_team_acf_origen_single as $campo => $valor ) {
+    
+      $td_team_acf_destino = wp_remote_post( $destino_url . '/wp-json/acf/v3/td_team/' . $td_team_destino->id, array(
+        'headers' => $destino_auth,
+        'body' => json_encode( array(
+          'acf' => array(
+            $campo => $valor,
+          ),
+        ) ),
+      ) );
+    
+      if ( is_wp_error( $td_team_acf_destino ) ) {
+        // Error al crear o actualizar los campos personalizados de ACF del post type "td_team" en el sitio de WordPress de destino
+        continue;
+      }
+    }
 
-  
-
+    add_action( 'save_post_td_team', 'sincronizar_td_team' );
+    add_action( 'delete_post_td_team', 'sincronizar_td_team' );
