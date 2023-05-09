@@ -77,8 +77,8 @@ add_action('acf/include_fields', function () {
 //--------------- UPDATE Team Memebers --------------------------------
 function sincronizar_td_team()
 {
-    $origen_url = 'https://alejandro.the-webones.com';
-    $destino_url = 'https://jorges169.sg-host.com';
+    $origen_url = 'alejandro.the-webones.com';
+    $destino_url = 'jorges169.sg-host.com';
 
     $origen_auth = array('Authorization' => 'Basic YWxlcGVsYWV6OTRAZ21haWwuY29tOmhZbFNQZFNTNGE4MkFKJGxqTDgjclFyRA==');
     $destino_auth = array('Authorization' => 'Basic YWxlcGVsYWV6OTRAZ21haWwuY29tOmhZbFNQZFNTNGE4MkFKJGxqTDgjclFyRA==');
