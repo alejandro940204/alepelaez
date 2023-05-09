@@ -15,7 +15,7 @@ get_header(); ?>
         ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php the_content() ?>
+                <!-- <?php the_content() ?> -->
                 <div class="entry-content">
                     <div class="hero-width">
                     <div class="px-4 py-5 text-center team-hero">

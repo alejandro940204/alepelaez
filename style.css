@@ -46,6 +46,10 @@ Template: dt-the7
     width: 100%;
     top:0;
     left: 0;
+    z-index: 2;
+    min-width: 1512px;
+    left: -141px;
+    width: 1512px;
 }
 .team-single img{
     margin-top: 200px;
