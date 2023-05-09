@@ -17,7 +17,6 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <div class="entry-content">
-                    <?php the_content(); ?>
                     <div class="px-4 py-5 text-center team-hero">
                         <h1 class="display-5 fw-bold text-body-emphasis">TEAM</h1>
                         <div class="col-lg-6 mx-auto">
