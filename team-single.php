@@ -15,7 +15,7 @@ get_header(); ?>
 
                 <div class="entry-content">
                     <?php the_content(); ?>
-                    <div class="wpb_wrapper">
+                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1662739684856"><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner"><div class="wpb_wrapper">
 	<div class="wpb_single_image wpb_content_element vc_align_center">
 		
 		<figure class="wpb_wrapper vc_figure">
@@ -46,7 +46,7 @@ get_header(); ?>
 
 		</div>
 	</div>
-</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div>
                 </div><!-- .entry-content -->
             </article><!-- #post-## -->
          
