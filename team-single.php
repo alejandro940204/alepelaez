@@ -39,7 +39,11 @@ get_header(); ?>
                             <?php the_field('bio', $team_id) ?>
                         </div>
                     </div>
-
+<style>
+    .wf-wrap{
+        width: auto !important;
+    }
+</style>
                 </div><!-- .entry-content -->
             </article><!-- #post-## -->
 
