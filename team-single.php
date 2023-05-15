@@ -19,7 +19,7 @@ get_header(); ?>
                 <div class="entry-content">
                                        
                     <div class="container col-md-8 col-lg-6 team-single text-center">
-                        <img width="93" height="94" src="<?php echo $url ?>" class="attachment-full" alt="" decoding="async" loading="lazy" >
+                        <img width="93" height="94" src="<?php echo $url ?>" class="attachment-full" alt="" decoding="async" loading="lazy" style="margin-top:0" >
                         <h3 style="text-align: center;margin: 20px;"><?php echo get_the_title() ?></h3>
                         <h5 style="text-align: center;margin: 20px;"><?php the_field('position', $team_id) ?></h5>
                         <div class="team-bio text-left">
