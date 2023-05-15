@@ -19,10 +19,10 @@ get_header(); ?>
                 <div class="entry-content">
                     <div class="hero-width">
                     <div class="px-4 py-5 text-center team-hero">
-                        <h1 class="display-5 fw-bold text-body-emphasis">TEAM</h1>
+                        <h1 class="display-5 fw-bold text-body-emphasis" style="color:white;">TEAM</h1>
                         <div class="col-lg-6 mx-auto">
                             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                <a style="color:black;" href="/team/">back to Teams CDR Companies</a>
+                                <a style="color:white;" href="/team/">back to Teams CDR Companies</a>
                             </div>
                         </div>
                     </div>
