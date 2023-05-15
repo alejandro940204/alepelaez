@@ -36,7 +36,7 @@ get_header(); ?>
                         <h3 style="text-align: center;margin: 20px;"><?php echo get_the_title() ?></h3>
                         <h5 style="text-align: center;margin: 20px;"><?php the_field('position', $team_id) ?></h5>
                         <div class="team-bio text-left">
-                            <?php the_field('bio', $team_id) ?>
+                            <?php the_content() ?>
                         </div>
                     </div>
 <style>
