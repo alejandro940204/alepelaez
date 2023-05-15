@@ -18,7 +18,11 @@ Template: dt-the7
 }
 
 .team-hero {
-    background-color: #E9E9E9;
+    background-image: url(https://cdr-financials.com/wp-content/uploads/2022/07/title-pages.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
 
 }
 
